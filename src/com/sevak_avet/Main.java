@@ -62,7 +62,7 @@ public class Main extends Application {
 		Button btn = new FXButton("CLICK ME", ButtonType.ROUND_RECT, 200, 100);
 		root.getChildren().add(btn);
 		
-		TextField tf = new FXTextField("TextField", TextFieldType.REGULAR, 200,150);
+		TextField tf = new FXTextField("TextField", TextFieldType.SEARCH, 200,150);
 		root.getChildren().add(tf);
 		
 		
