@@ -57,7 +57,7 @@ public class Main extends Application {
 	@Override
 	public void start(Stage stage) {
 		Group root = new Group();
-		Scene scene = new Scene(root, 500,300);
+		final Scene scene = new Scene(root, 500,300);
 				
 		Button btn = new FXButton("CLICK ME", ButtonType.ROUND_RECT, 200, 100);
 		root.getChildren().add(btn);
@@ -93,7 +93,14 @@ public class Main extends Application {
 		}
 		
 		
-		ColorPicker colorPicker = new FXColorPicker(Color.BLACK, 30, 150);
+		final ColorPicker colorPicker = new FXColorPicker(Color.BLACK, 30, 150);
+		colorPicker.setOnAction(new EventHandler<ActionEvent>() {
+			
+			@Override
+			public void handle(ActionEvent arg0) {
+				scene.setFill(colorPicker.getValue());				
+			}
+		});
 		root.getChildren().add(colorPicker);
 		
 		
